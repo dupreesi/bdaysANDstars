@@ -1,0 +1,16 @@
+<div class="board_container">
+    <section class="board" id="board">
+        <h2>test</h2>
+    </section>
+
+</div>
+
+<footer id='add_bday'>
+    <button class="drawer-button" id="drawer-button">&plus;</button>
+    <form action="/add" method="post">
+        <input type="board_id" type="hidden" value='{{ board_id }}'>
+        <input type="text" name="name" id="new_name" placeholder="add a new name" autocomplete="off" required>
+        <input type="text" name="dob" id="new_dob" placeholder="add a new birthdate" autocomplete="off" required>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+</footer>

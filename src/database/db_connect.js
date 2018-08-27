@@ -26,4 +26,4 @@ const options = {
     ssl: params.hostname !== "localhost"
 };
 
-model.exports = new Pool(options);
+module.exports = new Pool(options);

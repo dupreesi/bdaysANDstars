@@ -1,6 +1,6 @@
 BEGIN;
 
-    DROP
+    DROP TABLE
     IF EXISTS users, boards, bdays
     CASCADE;
 
@@ -47,7 +47,7 @@ CREATE TABLE bdays
 INSERT INTO bdays
     (board_id, name, dob, starsign, horoscope)
 VALUES
-    (1, 'Simon Dupree', 1987-04-14, 'aries', 'some text bla bla bla'),
-    (3, 'Bernd Dupree', 1947-11-11, 'scorpion', 'more text blablalbla');
+    (1, 'Simon Dupree', '1987-04-14', 'aries', 'some text bla bla bla'),
+    (3, 'Bernd Dupree', '1947-11-11', 'scorpion', 'more text blablalbla');
 
 COMMIT;

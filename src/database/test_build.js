@@ -7,7 +7,7 @@ const runDbTestBuild = () => new Promise((resolve, reject) => {
         if (err) {
             reject(err);
         } else {
-            resolve(result);
+            resolve(res);
         }
     });
 });
