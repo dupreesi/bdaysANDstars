@@ -131,6 +131,38 @@ table {
     font-family: Arial;
   }
 
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+  }
+
+  #logo {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: black;
+  }
+
+  main {
+    padding-top: 4rem;
+  }
+
+  #board_id {
+    margin-right: 20px;
+    margin-left: auto;
+  }
+
   /* LANDING PAGE */
 
   #container {
@@ -175,4 +207,32 @@ table {
   #join {
     background: skyblue;
     opacity: 0.8;
+   }
+
+   .board_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 32px;
+  }
+
+   .board {
+    width: 30vw;
+    min-height: 80vh;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 0;
+    }
+
+   .board > h2 {
+     text-align: center;
+   }
+
+   ul > li {
+     padding: 8px;
+     margin: 8px 0;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
    }

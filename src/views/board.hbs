@@ -1,0 +1,48 @@
+<div class="board_container">
+    <section class="board" id="board--names">
+        <h2>Name</h2>
+        <ul>
+            {{#each bdays}}
+            <li>{{this.name}}</li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <section class="board" id="board--dobs">
+        <h2>DOB</h2>
+        <ul>
+            {{#each bdays}}
+            <li>{{dobFilter this.dob}}</li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <section class="board" id="board--starsigns">
+        <h2>Star sign</h2>
+        <ul>
+            {{#each bdays}}
+            <li>{{toZodiac this.dob}}</li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <section class="board" id="board--horoscopes">
+        <h2>Horoscope</h2>
+        <ul>
+            {{#each bdays}}
+            <li>{{horoscope toZodiac this.dob}}</li>
+            {{/each}}
+        </ul>
+    </section>
+</div>
+
+<footer id='add_bday'>
+    <button class="drawer-button" id="drawer-button">&plus;</button>
+    <form action="/add" method="post">
+        <input name="board_id" type="hidden" value='{{ board_id }}'>
+        <input type="text" name="name" id="new_name" placeholder="Name, no numbers" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
+            autocomplete="off" required>
+        <input type="date" name="dob" id="new_dob" placeholder="YYYY-MM-DD" autocomplete="off" required>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+</footer>

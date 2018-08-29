@@ -1,5 +1,13 @@
 <header>
     <nav>
-        <p>HelloWorld</p>
+        <a href="/">
+            <img src="image/logo.jpg" alt='logo' id="logo">
+        </a>
+        <a href="/">
+            <h1>HOME</h1>
+        </a>
+        {{!-- set up if statement to show board id as defined in get-board by id (name) --}} {{#if board_id }}
+        <h2 id="board_id">Board: {{ board_id }}</h2>
+        {{/if}}
     </nav>
 </header>
