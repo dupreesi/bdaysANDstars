@@ -13,8 +13,8 @@ joinBoardInput.addEventListener('click', function (event) {
     event.stopPropagation();
 });
 // enable submit on enter
-joinBoardInput.addEventListener('keypress', function (e) {
-    var key = e.which || e.keyCode;
+joinBoardInput.addEventListener('keypress', function (event) {
+    var key = event.which || event.keyCode;
     if (key === 13) {
         joinTable();
     }
@@ -23,3 +23,4 @@ joinBoardInput.addEventListener('keypress', function (e) {
 join.addEventListener('click', function (e) {
     joinTable();
 });
+

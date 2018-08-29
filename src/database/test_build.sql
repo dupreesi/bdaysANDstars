@@ -48,6 +48,7 @@ INSERT INTO bdays
     (board_id, name, dob, starsign, horoscope)
 VALUES
     (1, 'Simon Dupree', '1987-04-14', 'aries', 'some text bla bla bla'),
+    (1, 'Test Dupree', '1987-04-29', 'aries', 'some more text bla bla bla'),
     (3, 'Bernd Dupree', '1947-11-11', 'scorpion', 'more text blablalbla');
 
 COMMIT;
