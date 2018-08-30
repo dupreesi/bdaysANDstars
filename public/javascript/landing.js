@@ -23,4 +23,3 @@ joinBoardInput.addEventListener('keypress', function (event) {
 join.addEventListener('click', function (e) {
     joinTable();
 });
-

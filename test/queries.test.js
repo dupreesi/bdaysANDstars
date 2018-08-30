@@ -3,6 +3,7 @@ const runDbTestBuild = require('../src/database/test_build');
 const getBdays = require('../src/queries/get_bdays');
 const createBoard = require('../src/queries/create_board');
 const addEntry = require('../src/queries/add-entry');
+const delEntry = require('../src/queries/delete-entry');
 
 tape('tape is running (test.queries)', (t) => {
     t.equal(2 / 2, 1, '2 by 2 div = 1');
@@ -74,5 +75,15 @@ tape("add a new entry", t => {
                 t.error(error, 'error related to addEntry');
                 t.end();
             })
+    );
+});
+
+tape("Can remove an entry from a board", t => {
+    const id = 1;
+    runDbTestBuild().then(
+        delEntry(id).then(res => {
+            t.equal(res.rowCount, 1, "should return row count of 1");
+            t.end();
+        })
     );
 });

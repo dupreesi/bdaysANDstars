@@ -163,6 +163,16 @@ table {
     margin-left: auto;
   }
 
+
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 1.414rem;
+  }
+
   /* LANDING PAGE */
 
   #container {
@@ -171,7 +181,7 @@ table {
       align-items: center;
       justify-content: space-evenly;
       height: calc(100vh - 2rem);
-      background-color: bisque;
+      background-color: #4A4A4A;
   }
 
   .landing_button {
@@ -179,7 +189,6 @@ table {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px black solid;
     width: 50vmin;
     height: 50vmin;
   }
@@ -190,7 +199,6 @@ table {
 
   #plus {
     font-size: 10rem;
-    border: 1px solid black;
     line-height: 6rem;
   }
 
@@ -200,39 +208,190 @@ table {
   }
 
   #create {
-    background: skyblue;
+    background:#151515;
     opacity: 0.8;
   }
 
   #join {
-    background: skyblue;
+    background: #151515;
+    color: saddlebrown;;
     opacity: 0.8;
    }
 
+   #board_id {
+    font-size: 1rem;
+    width: auto;
+    margin-bottom: 16px;
+  }
+
+  @media all and (min-width: 600px) {
+    #container {
+      flex-direction: row;
+    }
+
+    .landing_button {
+      width: 45vw;
+      height: calc((90vw - 4rem) / 2);
+    }
+
+    #plus {
+      font-size: 15rem;
+      line-height: 8.5rem;
+    }
+
+    #board_name {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      width: auto;
+    }
+  }
+
+  /* Board PAGE */
+
    .board_container {
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
     padding-top: 32px;
   }
 
    .board {
-    width: 30vw;
-    min-height: 80vh;
-    padding: 8px;
-    border-radius: 4px;
-    margin: 0;
+    width: calc(100vw - 64px);
+  margin-left: 32px;
+  margin-bottom: 32px;
+  padding: 8px;
+  min-height: 20vh;
     }
 
-   .board > h2 {
-     text-align: center;
-   }
+    .board > h2 {
+      text-align: center;
+      color: whitesmoke;
+    }
 
-   ul > li {
-     padding: 8px;
-     margin: 8px 0;
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-     align-items: center;
-   }
+    #board--names {
+      background: #646464;
+    }
+
+    #board--dobs {
+      background: #5C5C5C;
+    }
+
+    #board--starsigns {
+      background: #4A4A4A;
+    }
+    #board--horoscopes {
+      background: #383838;
+    }
+
+    @media all and (min-width: 800px) {
+      .board_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding-top: 32px;
+      }
+
+      .board {
+        min-height: 80vh;
+        padding: 8px;
+        border: 1px white solid;
+        margin: 0;
+      }
+    }
+
+    #add_bday {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      background-color: #151515;
+      padding: 8px;
+      transition: 0.5s;
+    }
+
+    .hidden {
+      transform: translateY(100%);
+    }
+
+    .drawer-button {
+      position: absolute;
+      top: -96px;
+      right: 16px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      background: #257edd;
+      font-size: 3em;
+      border-radius: 50%;
+      color: #fcfcf7;
+      border: none;
+      transition: 0.5s;
+      border: 5px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .drawer-button:focus {
+      outline: none;
+      background: #89ba1f;
+    }
+
+    #add_bday > form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: calc(100% - 32px);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    #add_bday > form > input[type='text'] {
+      width: 100%;
+      margin-bottom: 16px;
+      padding: 4px;
+    }
+
+  button[type='submit'] {
+    background: yellowgreen;
+    font-size: 1em;
+    margin-top: 20px;
+    height: calc(1em + 32px);
+
+  }
+
+  button[type='submit']:focus,
+  button[type='submit']:hover {
+    background: #257edd;
+  }
+
+  ul > li {
+    font-size: 0.7rem;
+    min-height: 8.5vw;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #zodiacImg {
+    width: 60px;
+  }
+
+  #board--names > ul > li {
+    background: #bc3232;
+  }
+
+  #board--dobs > ul > li {
+    background: #89ba1f;
+  }
+
+  #board--starsigns > ul > li {
+    background: #257edd;
+  }
+
+  #board--horoscopes> ul > li {
+    background: #25ddaf;
+  }
+
+

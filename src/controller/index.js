@@ -8,6 +8,7 @@ const error = require('./error');
 const errorRoute = require('./error-route');
 const createBoard = require('./create-board');
 const addEntry = require('./add-entry');
+const delEntry = require('./delete-entry');
 
 
 // set up router
@@ -16,6 +17,7 @@ router.get('/board/:board_id', getBoard.get);
 router.get('/make_error', errorRoute);
 router.get('/create/', createBoard);
 router.post('/add/', addEntry);
+router.get('/deleteentry/:id', delEntry);
 router.use(error.client);
 router.use(error.server);
 

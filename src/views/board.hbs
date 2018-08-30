@@ -1,9 +1,10 @@
 <div class="board_container">
+
     <section class="board" id="board--names">
         <h2>Name</h2>
         <ul>
             {{#each bdays}}
-            <li>{{this.name}}</li>
+            <li><button class="delete" id="{{this.id}}">&times;</button>{{this.name}}</li>
             {{/each}}
         </ul>
     </section>
@@ -21,19 +22,21 @@
         <h2>Star sign</h2>
         <ul>
             {{#each bdays}}
-            <li>{{toZodiac this.dob}}</li>
+            <li id="zodiacItem">{{toZodiac this.dob}}<img id="zodiacImg" src="/public/image/zodiac/{{toZodiac this.dob}}.png"
+                    alt=""></li>
             {{/each}}
         </ul>
     </section>
 
     <section class="board" id="board--horoscopes">
         <h2>Horoscope</h2>
-        <ul>
-            {{#each bdays}}
-            <li>{{horoscope toZodiac this.dob}}</li>
-            {{/each}}
+        <ul id="horoUl">
+            {{!-- {{#each bdays}}
+            <li>{{horoscope (toZodiac this.dob)}}</li>
+            {{/each}} --}}
         </ul>
     </section>
+
 </div>
 
 <footer id='add_bday'>
@@ -43,6 +46,6 @@
         <input type="text" name="name" id="new_name" placeholder="Name, no numbers" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
             autocomplete="off" required>
         <input type="date" name="dob" id="new_dob" placeholder="YYYY-MM-DD" autocomplete="off" required>
-        <button type="submit" id="submit">Submit</button>
+        <button type="submit" id="submit">Add Bday</button>
     </form>
 </footer>
